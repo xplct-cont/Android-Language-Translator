@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "71011830995",
+    "project_id": "translator-app-fafbb",
+    "storage_bucket": "translator-app-fafbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71011830995:android:8a1a8788c200f0b3f9d826",
+        "android_client_info": {
+          "package_name": "com.example.languagetranslatorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71011830995-v5lh3f0soh8cop9ftkg5j3cqmg74qi92.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQgruAULcpFDtsvgqT9re826DaGw6jjuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71011830995-v5lh3f0soh8cop9ftkg5j3cqmg74qi92.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
