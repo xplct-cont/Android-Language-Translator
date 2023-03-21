@@ -53,6 +53,7 @@
             android:layout_weight="1"
             android:id="@+id/idToSpinner"
             android:padding="3dp"
+            android:layout_marginEnd="30dp"
             android:gravity="center"
             android:layout_margin="3dp"/>
     </LinearLayout>
@@ -113,7 +114,23 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="15dp"
+        android:text="Translate"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/idTVTranslatedTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Translated Text"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:textSize="15sp"/>
+
+
 </LinearLayout>
