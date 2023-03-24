@@ -19,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton translateBtn;
     private TextView translatedTV;
 
+    String[] fromLanguages = {"From", "English", "Afrikaans", "Arabic", "Belarusian", "Bulgarian", "Bengali",
+            "Catalan", "Czech", "Welsh", "Hindi", "Urdu"};
+
+    String[] toLanguages = {"To", "English", "Afrikaans", "Arabic", "Belarusian", "Bulgarian", "Bengali",
+            "Catalan", "Czech", "Welsh", "Hindi", "Urdu"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
