@@ -4,8 +4,20 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Spinner fromSpinner, toSpinner;
+    private TextInputEditText sourceEdt;
+    private ImageView micIV;
+    private MaterialButton translateBtn;
+    private TextView TranslatedTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,5 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_layout);
+
+        fromSpinner = findViewById(R.id.idFromSpinner);
+        toSpinner = findViewById(R.id.idToSpinner);
     }
 }
