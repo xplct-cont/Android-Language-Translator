@@ -118,7 +118,8 @@
         android:layout_marginEnd="60dp"
         android:layout_marginTop="15dp"
         android:text="Translate"
-        android:textAllCaps="true"/>
+        android:textAllCaps="true"
+        android:id="@+id/idBtnTranslate"/>
 
     <TextView
         android:id="@+id/idTVTranslatedTV"

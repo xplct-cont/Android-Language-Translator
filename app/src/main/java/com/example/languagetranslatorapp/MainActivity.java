@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText sourceEdt;
     private ImageView micIV;
     private MaterialButton translateBtn;
-    private TextView TranslatedTV;
+    private TextView translatedTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         fromSpinner = findViewById(R.id.idFromSpinner);
         toSpinner = findViewById(R.id.idToSpinner);
+        sourceEdt = findViewById(R.id.idEditSource);
+        micIV = findViewById(R.id.idIVMic);
+        translateBtn = findViewById(R.id.idBtnTranslate);
+        translatedTV = findViewById(R.id.idTVTranslatedTV);
     }
 }
