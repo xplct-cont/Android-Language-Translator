@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,14 +47,58 @@ public class MainActivity extends AppCompatActivity {
         translatedTV = findViewById(R.id.idTVTranslatedTV);
         fromSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                fromLanguageCode = getLanguageCode(fromLanguages[position]);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
+    }
+
+    public int getLanguageCode(String language) {
+        int languageCode = 0;
+        switch (language){
+            case "English":
+                languageCode = FirebaseTranslateLanguage.EN;
+                break;
+            case "Afrikaans":
+                languageCode = FirebaseTranslateLanguage.AF;
+                break;
+            case "Arabic":
+                languageCode = FirebaseTranslateLanguage.AR;
+                break;
+            case "Belarusian":
+                languageCode = FirebaseTranslateLanguage.BE;
+                break;
+            case "Bulgarian":
+                languageCode = FirebaseTranslateLanguage.BG;
+                break;
+            case "Bengali":
+                languageCode = FirebaseTranslateLanguage.BN;
+                break;
+            case "Catalan":
+                languageCode = FirebaseTranslateLanguage.CA;
+                break;
+            case "Czech":
+                languageCode = FirebaseTranslateLanguage.CS;
+                break;
+            case "Welsh":
+                languageCode = FirebaseTranslateLanguage.CY;
+                break;
+            case "Hindi":
+                languageCode = FirebaseTranslateLanguage.HI;
+                break;
+            case "Urdu":
+                languageCode = FirebaseTranslateLanguage.UR;
+                break;
+            default:
+                languageCode = 0;
+
+        }
+        return languageCode;
+
     }
 }
