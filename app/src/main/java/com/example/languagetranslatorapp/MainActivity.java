@@ -1,9 +1,12 @@
 package com.example.languagetranslatorapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +18,8 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.ml.naturallanguage.translate.FirebaseTranslateLanguage;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -86,11 +91,49 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 translatedTV.setText("");
                 if(sourceEdt.getText().toString().isEmpty()){
-                    Toast.makeText(MainActivity.this, "Please enter text to translate.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Enter text to translate!", Toast.LENGTH_SHORT).show();
+                }else if (fromLanguageCode==0){
+                    Toast.makeText(MainActivity.this, "Select source language!", Toast.LENGTH_SHORT).show();
+                }else if (toLanguageCode==0){
+                    Toast.makeText(MainActivity.this, "Select language to make translation!", Toast.LENGTH_SHORT).show();
+                }else{
+                    translateText(fromLanguageCode, toLanguageCode,sourceEdt.getText().toString());
                 }
             }
         });
+
+       micIV.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+                Intent i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+                i.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak to convert into text!");
+
+                try{
+                    startActivityForResult(i, REQUEST_PERMISSION_CODE);
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "" +e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+           }
+       });
+
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==REQUEST_PERMISSION_CODE){
+            if(resultCode==RESULT_OK && data!=null);
+        }
+    }
+
+    private void translateText(int fromLanguageCode, int toLanguageCode, String source){
+
+    }
+
 
     public int getLanguageCode(String language) {
         int languageCode = 0;
